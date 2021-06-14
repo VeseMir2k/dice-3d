@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -25,32 +26,162 @@ body {
 }
 
 .dice .side {
-  background-color: rgba(137, 43, 226, 0.5);
+  background-color: rgba(221, 221, 221, 0.95);
   width: 100%;
   height: 100%;
   position: absolute;
   transform: rotateY(-45deg);
+  border: 2px dashed rgba(0, 0, 0, 0.5);
 }
+
+.dice .side div {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* -------------------------------------------------- */
 
 .dice .front {
   transform: translateZ(100px);
-  background-color: rgba(226, 116, 43, 0.5);
 }
+
+.dice .front div {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -------------------------------------------------- */
+
 .dice .back {
   transform: translateZ(-100px);
 }
+
+.dice .back div:first-child {
+  top: 20px;
+  left: 20px;
+}
+.dice .back div:nth-child(2) {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.dice .back div:nth-child(3) {
+  bottom: 20px;
+  left: 20px;
+}
+.dice .back div:nth-child(4) {
+  top: 20px;
+  right: 20px;
+}
+.dice .back div:nth-child(5) {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.dice .back div:last-child {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* -------------------------------------------------- */
+
 .dice .left {
   transform: rotateY(-90deg) translateZ(100px);
 }
+
+.dice .left div:first-child {
+  top: 20px;
+  left: 20px;
+}
+.dice .left div:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dice .left div:last-child {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* -------------------------------------------------- */
+
 .dice .right {
   transform: rotateY(90deg) translateZ(100px);
 }
+
+.dice .right div:first-child {
+  top: 25px;
+  left: 25px;
+}
+
+.dice .right div:nth-child(2) {
+  left: 25px;
+  bottom: 25px;
+}
+
+.dice .right div:nth-child(3) {
+  top: 25px;
+  right: 25px;
+}
+
+.dice .right div:last-child {
+  right: 25px;
+  bottom: 25px;
+}
+
+/* -------------------------------------------------- */
+
 .dice .top {
   transform: rotateX(-90deg) translateZ(100px);
 }
+
+.dice .top div:first-child {
+  top: 30px;
+  left: 30px;
+}
+
+.dice .top div:last-child {
+  right: 30px;
+  bottom: 30px;
+}
+
+/* -------------------------------------------------- */
+
 .dice .down {
   transform: rotateX(90deg) translateZ(100px);
 }
+
+.dice .down div:first-child {
+  top: 25px;
+  left: 25px;
+}
+
+.dice .down div:nth-child(2) {
+  left: 25px;
+  bottom: 25px;
+}
+
+.dice .down div:nth-child(3) {
+  top: 25px;
+  right: 25px;
+}
+
+.dice .down div:nth-child(4) {
+  right: 25px;
+  bottom: 25px;
+}
+
+.dice .down div:last-child {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -------------------------------------------------- */
 
 @keyframes rotateDice {
   0% {
